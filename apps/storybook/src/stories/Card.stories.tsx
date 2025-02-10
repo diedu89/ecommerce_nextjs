@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card } from "@repo/ui/card";
+import Card from "@repo/ui/Card";
 
 const meta = {
   title: "UI/Card",
@@ -11,8 +11,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "I am a card.",
     title: "Card",
-    href: "https://example.com",
+    category: "Category",
+    description: "Description",
+    imageUrl: "https://via.placeholder.com/300",
+    price: 100,
   },
 };
