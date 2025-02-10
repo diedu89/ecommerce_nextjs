@@ -1,7 +1,12 @@
 import "./globals.css";
 import "@repo/ui/styles.css";
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
+const GraphqlProvider = dynamic(
+  () => import("@/components/providers/GrapqhlProvider")
+);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <body className={inter.className}>
+        <GraphqlProvider>{children}</GraphqlProvider>
+      </body>
     </html>
   );
 }
