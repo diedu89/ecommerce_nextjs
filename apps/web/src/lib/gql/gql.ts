@@ -14,9 +14,11 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
+    "\n  query Me {\n    me {\n      id\n      email\n      firstName\n      lastName\n      username\n      createdAt\n    }\n  }\n": typeof types.MeDocument,
     "\n  query products {\n    products {\n      items {\n        title\n        description\n        price\n        category\n        image\n        stock\n        isActive\n        id\n      }\n      total\n      page\n      size\n      pages\n    }\n  }\n": typeof types.ProductsDocument,
 };
 const documents: Documents = {
+    "\n  query Me {\n    me {\n      id\n      email\n      firstName\n      lastName\n      username\n      createdAt\n    }\n  }\n": types.MeDocument,
     "\n  query products {\n    products {\n      items {\n        title\n        description\n        price\n        category\n        image\n        stock\n        isActive\n        id\n      }\n      total\n      page\n      size\n      pages\n    }\n  }\n": types.ProductsDocument,
 };
 
@@ -34,6 +36,10 @@ const documents: Documents = {
  */
 export function graphql(source: string): unknown;
 
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query Me {\n    me {\n      id\n      email\n      firstName\n      lastName\n      username\n      createdAt\n    }\n  }\n"): (typeof documents)["\n  query Me {\n    me {\n      id\n      email\n      firstName\n      lastName\n      username\n      createdAt\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
