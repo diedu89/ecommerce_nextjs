@@ -32,6 +32,6 @@
     "typescript": "5.7.3"
   },
   "dependencies": {
-    "next": "^14.2.34"
+    "next": "^15.5.15"
   }
 }
